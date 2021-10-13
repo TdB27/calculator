@@ -2,9 +2,15 @@
 @import 'variables';
 @import 'global';
 
-#calc {
-    max-width: 500px;
+#calculator {
+    max-width: 540px;
     width: 100%;
-    border: 1px solid #000;
+    margin-top: 80px;
+
+    @media screen and (max-width: $mobile) {
+        margin-top: 12px;
+        padding: 0 23px;
+    }
     
+    @import 'header';
 }

@@ -1,0 +1,72 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.header__title {
+    margin-top: 20px;
+}
+
+.header__theme {
+    height: 55px;
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+}
+
+.header__theme--subtitle {
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.header__several--theme {
+    width: 70px;
+    display: grid;
+    grid-template-areas: 
+        "first second third"
+        "keypad keypad keypad";
+    grid-template-rows: 30px 1fr;
+    align-items: center;
+}
+
+.header__first--theme,
+.header__second--theme,
+.header__third--theme {
+    text-align: center;
+    font-size: 14px;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 12px;
+    }
+}
+
+.header__first--theme {
+    grid-area: first;
+}
+
+.header__second--theme {
+    grid-area: second;
+}
+
+.header__third--theme {
+    grid-area: third;
+}
+
+.header__keypad {
+    grid-area: keypad;
+    height: 24px;
+    border-radius: 13px;
+    background-color: $blue-2;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.header__chosen--theme {
+    background-color: $red;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+}

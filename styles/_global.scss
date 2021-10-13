@@ -5,11 +5,16 @@ body {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
+    background-color: $blue-1;
 }
 
 h1, span, button {
+    margin: 0;
     font-family: $spartan;
+}
+
+h1, span {
+    color: $white;
 }
 
 button {
