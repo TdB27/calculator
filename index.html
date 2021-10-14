@@ -28,25 +28,25 @@
         </header>
         <main>
             <section class="screen">
-                <span class="screen__result">399,981</span>
+                <span class="screen__result">0</span>
             </section>
             <section class="components">
-                <button class="components__btn-default">7</button>
-                <button class="components__btn-default">8</button>
-                <button class="components__btn-default">9</button>
-                <button class="components__btn-default --function-clear">del</button>
-                <button class="components__btn-default">4</button>
-                <button class="components__btn-default">5</button>
-                <button class="components__btn-default">6</button>
-                <button class="components__btn-default">+</button>
-                <button class="components__btn-default">1</button>
-                <button class="components__btn-default">2</button>
-                <button class="components__btn-default">3</button>
-                <button class="components__btn-default">-</button>
+                <button class="components__btn-default" onclick="numbers('7')">7</button>
+                <button class="components__btn-default" onclick="numbers('8')">8</button>
+                <button class="components__btn-default" onclick="numbers('9')">9</button>
+                <button class="components__btn-default --function-clears">del</button>
+                <button class="components__btn-default" onclick="numbers('4')">4</button>
+                <button class="components__btn-default" onclick="numbers('5')">5</button>
+                <button class="components__btn-default" onclick="numbers('6')">6</button>
+                <button class="components__btn-default" value="+" onclick="operators('+')">+</button>
+                <button class="components__btn-default" onclick="numbers('1')">1</button>
+                <button class="components__btn-default" onclick="numbers('2')">2</button>
+                <button class="components__btn-default" onclick="numbers('3')">3</button>
+                <button class="components__btn-default" onclick="operators('-')">-</button>
                 <button class="components__btn-default">.</button>
-                <button class="components__btn-default">0</button>
-                <button class="components__btn-default">/</button>
-                <button class="components__btn-default">x</button>
+                <button class="components__btn-default" onclick="numbers('0')">0</button>
+                <button class="components__btn-default" onclick="operators('/')">/</button>
+                <button class="components__btn-default" onclick="operators('*')">x</button>
                 <button class="components__btn-double --function-clear">reset</button>
                 <button class="components__btn-double --function-equal">=</button>
             </section>
@@ -61,5 +61,6 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> -->
+  <script src="./scripts/script.js"></script>
 </body>
 </html>
