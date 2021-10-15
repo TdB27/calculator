@@ -94,5 +94,13 @@ const result = () => {
     }
 }
 
+const reset = () => {
+    number1 = "0";
+    operator = null;
+    number2 = "0";
+    screen.innerHTML = "0";
+}
+
+document.querySelector('.reset').addEventListener('click', () => reset());
 document.querySelector('.--function-point').addEventListener('click', () => point());
 document.querySelector('.--function-equal').addEventListener('click', () => result());
