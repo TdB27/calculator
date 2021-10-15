@@ -29,8 +29,14 @@ const numbers = (value) => {
 
 const operators = (value) => {
     operator = value;
-    if(operator == '')
+    if(operator == "")
         return false;
+
+    if(number1 == "0")
+        return operator = null;
+
+    if(number1 == "0.")
+        return operator = null;
 
     else{
         screen.innerHTML = number1 + operator;
@@ -47,9 +53,8 @@ const point = () => {
         if(number1 != 0)
             screen.innerHTML = number1 += ".";
 
-        else{
-            screen.innerHTML = number1 = "0.";
-        }
+        else
+        screen.innerHTML = number1 = "0.";
     }
     
     if(operator != null) {
