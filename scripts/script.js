@@ -1,10 +1,14 @@
 let number1 = "0";
 let operator = null;
 let number2 = "0";
+let resultOperation;
+let arrayOperation = ['0'];
 const screen = document.querySelector('.screen__result');
 
-
 const numbers = (value) => {
+
+    arrayOperation.push(value);
+
     if(operator == null) {
         if(number1 != "0")
             number1 += value;
@@ -22,13 +26,15 @@ const numbers = (value) => {
         else
             number2 = value;
 
-            number1 + operator + number2;
-            screen.innerHTML = number1 + operator + number2;
-        }
+        number1 + operator + number2;
+        screen.innerHTML = number1 + operator + number2;
+    }
 }
 
 const operators = (value) => {
     operator = value;
+    arrayOperation.push(value);
+
     if(operator == "")
         return false;
 
@@ -50,8 +56,10 @@ const point = () => {
         if(number1.toString().indexOf(".") >= 0)
             return false
 
-        if(number1 != 0)
+        if(number1 != 0){
             screen.innerHTML = number1 += ".";
+            arrayOperation.push(".");
+        }
 
         else
         screen.innerHTML = number1 = "0.";
@@ -72,7 +80,6 @@ const point = () => {
 }
 
 const result = () => {
-    let resultOperation;
 
     if(number2 != 0){
 
@@ -91,6 +98,7 @@ const result = () => {
         screen.innerHTML = resultOperation;
         number1 = resultOperation;
         number2 = 0;
+        arrayOperation = ['0'];
     }
 }
 
@@ -99,8 +107,30 @@ const reset = () => {
     operator = null;
     number2 = "0";
     screen.innerHTML = "0";
+    arrayOperation = ['0'];
 }
 
+const del = () => {
+    if(arrayOperation.length == 0)
+        screen.innerHTML = "0";
+
+    if(arrayOperation.length > 1) {
+
+        if(arrayOperation.length == 2){
+            arrayOperation.splice(0, 1);
+            console.log(arrayOperation)
+        }
+        
+        else {
+            arrayOperation.pop();
+            console.log(arrayOperation)
+        }
+    }
+    
+    screen.innerHTML = resultOperation + arrayOperation.join("");
+}
+
+document.querySelector('.delete').addEventListener('click', () => del());
 document.querySelector('.reset').addEventListener('click', () => reset());
 document.querySelector('.--function-point').addEventListener('click', () => point());
 document.querySelector('.--function-equal').addEventListener('click', () => result());
