@@ -2,7 +2,7 @@ let number1 = "0";
 let operator = null;
 let number2 = "0";
 let resultOperation;
-let arrayOperation = ['0'];
+let arrayOperation = Array();
 const screen = document.querySelector('.screen__result');
 
 const numbers = (value) => {
@@ -16,7 +16,7 @@ const numbers = (value) => {
         else
             number1 = value;
             
-        screen.innerHTML = number1;
+        display(number1)
     }
     else if (operator != null) {
 
@@ -26,8 +26,7 @@ const numbers = (value) => {
         else
             number2 = value;
 
-        number1 + operator + number2;
-        screen.innerHTML = number1 + operator + number2;
+        display(number1 + operator + number2);
     }
 }
 
@@ -45,39 +44,10 @@ const operators = (value) => {
         return operator = null;
 
     else{
-        screen.innerHTML = number1 + operator;
+        display(number1 + operator);
         number2 = 0;
     }
 };
-
-const point = () => {
-
-    if(operator == null) {
-        if(number1.toString().indexOf(".") >= 0)
-            return false
-
-        if(number1 != 0){
-            screen.innerHTML = number1 += ".";
-            arrayOperation.push(".");
-        }
-
-        else
-        screen.innerHTML = number1 = "0.";
-    }
-    
-    if(operator != null) {
-        if(number2.toString().indexOf(".") >= 0)
-            return false
-
-        if(number2 != 0)
-            number2 += ".";
-
-        else
-            number2 = "0.";
-        
-        screen.innerHTML = number1 + operator + number2
-    }
-}
 
 const result = () => {
 
@@ -95,10 +65,42 @@ const result = () => {
         if (operator == '/')
             resultOperation = parseFloat(number1) / parseFloat(number2);
 
-        screen.innerHTML = resultOperation;
+        
+        const stringNumber = transformToString(resultOperation)
+        display(stringNumber)
         number1 = resultOperation;
+        operator = null;
         number2 = 0;
-        arrayOperation = ['0'];
+        arrayOperation = [stringNumber];
+    }
+}
+
+const point = () => {
+
+    if(operator == null) {
+        if(number1.toString().indexOf(".") >= 0)
+            return false
+
+        if(number1 != 0){
+            display(number1 += ".");
+            arrayOperation.push(".");
+        }
+
+        else
+        display(number1 = "0.")
+    }
+    
+    if(operator != null) {
+        if(number2.toString().indexOf(".") >= 0)
+            return false
+
+        if(number2 != 0)
+            number2 += ".";
+
+        else
+            number2 = "0.";
+        
+        screen.innerHTML = number1 + operator + number2
     }
 }
 
@@ -106,28 +108,37 @@ const reset = () => {
     number1 = "0";
     operator = null;
     number2 = "0";
-    screen.innerHTML = "0";
+    display("0")
     arrayOperation = ['0'];
 }
 
 const del = () => {
-    if(arrayOperation.length == 0)
-        screen.innerHTML = "0";
-
-    if(arrayOperation.length > 1) {
-
-        if(arrayOperation.length == 2){
-            arrayOperation.splice(0, 1);
-            console.log(arrayOperation)
+    if(operator == null) {    
+        if(arrayOperation.length <= 1) {
+            arrayOperation.splice(0, 0, "0");
         }
-        
-        else {
+
+        if(arrayOperation.length > 1 && arrayOperation[0] === "0"){
+            const i = arrayOperation.splice(0, 0, number1)
+            console.log(i)
+        }
+
+        if(number1.length > 1) {
             arrayOperation.pop();
-            console.log(arrayOperation)
+            let juntar = arrayOperation.join("");
+            //console.log(arrayOperation)
+            display(juntar)
         }
     }
-    
-    screen.innerHTML = resultOperation + arrayOperation.join("");
+}
+
+const transformToString = value => {
+    return value.toString()
+}
+
+const display = value => {
+    screen.innerHTML = value;
+    console.log(value)
 }
 
 document.querySelector('.delete').addEventListener('click', () => del());
