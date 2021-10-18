@@ -2,12 +2,9 @@ let number1 = "0";
 let operator = null;
 let number2 = "0";
 let resultOperation;
-let arrayOperation = Array();
 const screen = document.querySelector('.screen__result');
 
-const numbers = (value) => {
-
-    arrayOperation.push(value);
+const numbers = value => {
 
     if(operator == null) {
         if(number1 != "0")
@@ -30,9 +27,8 @@ const numbers = (value) => {
     }
 }
 
-const operators = (value) => {
+const operators = value => {
     operator = value;
-    arrayOperation.push(value);
 
     if(operator == "")
         return false;
@@ -71,7 +67,6 @@ const result = () => {
         number1 = resultOperation;
         operator = null;
         number2 = 0;
-        arrayOperation = [stringNumber];
     }
 }
 
@@ -83,7 +78,6 @@ const point = () => {
 
         if(number1 != 0){
             display(number1 += ".");
-            arrayOperation.push(".");
         }
 
         else
@@ -109,27 +103,12 @@ const reset = () => {
     operator = null;
     number2 = "0";
     display("0")
-    arrayOperation = ['0'];
 }
 
-const del = () => {
-    if(operator == null) {    
-        if(arrayOperation.length <= 1) {
-            arrayOperation.splice(0, 0, "0");
-        }
-
-        if(arrayOperation.length > 1 && arrayOperation[0] === "0"){
-            const i = arrayOperation.splice(0, 0, number1)
-            console.log(i)
-        }
-
-        if(number1.length > 1) {
-            arrayOperation.pop();
-            let juntar = arrayOperation.join("");
-            //console.log(arrayOperation)
-            display(juntar)
-        }
-    }
+const backspace = () => {
+    screen.textContent = screen.textContent.slice(0, -1)
+    if(screen.textContent == '')
+        display("0")
 }
 
 const transformToString = value => {
@@ -137,11 +116,11 @@ const transformToString = value => {
 }
 
 const display = value => {
-    screen.innerHTML = value;
+    screen.textContent = value;
     console.log(value)
 }
 
-document.querySelector('.delete').addEventListener('click', () => del());
+document.querySelector('.backspace').addEventListener('click', () => backspace());
 document.querySelector('.reset').addEventListener('click', () => reset());
 document.querySelector('.--function-point').addEventListener('click', () => point());
 document.querySelector('.--function-equal').addEventListener('click', () => result());
