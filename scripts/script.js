@@ -40,6 +40,8 @@ const operators = value => {
         return operator = null;
 
     else{
+        document.querySelectorAll('.numbers').forEach( item => item.removeAttribute("disabled"));
+        document.querySelector('.--function-point').removeAttribute("disabled");
         display(number1 + operator);
         number2 = 0;
     }
@@ -67,6 +69,11 @@ const result = () => {
         number1 = resultOperation;
         operator = null;
         number2 = 0;
+    }
+
+    if(resultOperation > 0) {
+        document.querySelectorAll('.numbers').forEach( item => item.setAttribute("disabled", ""));
+        document.querySelector('.--function-point').setAttribute("disabled", "");
     }
 }
 
@@ -102,7 +109,9 @@ const reset = () => {
     number1 = "0";
     operator = null;
     number2 = "0";
-    display("0")
+    display("0");
+    document.querySelectorAll('.numbers').forEach( item => item.removeAttribute("disabled"));
+    document.querySelector('.--function-point').removeAttribute("disabled");
 }
 
 const backspace = () => {
