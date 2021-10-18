@@ -141,7 +141,6 @@ const transformToString = value => {
 
 const display = value => {
     screen.textContent = value;
-    console.log(number1)
 }
 
 document.querySelector('.backspace').addEventListener('click', () => backspace());
