@@ -106,9 +106,24 @@ const reset = () => {
 }
 
 const backspace = () => {
-    screen.textContent = screen.textContent.slice(0, -1)
-    if(screen.textContent == '')
-        display("0")
+
+    if(operator == null && number1.length === 1)
+        display(number1 = "0");
+
+    if(operator == null && number1.length > 1)
+        number1 = screen.textContent = number1.slice(0, -1);
+        
+    if(operator != null){
+        if(operator != null && (number2 == "0" || number2 == 0 || number2 == "")){
+            operator = null;
+            display(number1);
+        }
+
+        if(operator != null && number2.length > 0) {
+            number2 = screen.textContent = number2.slice(0, -1);
+            display(number1 + operator + number2);
+        }
+    }
 }
 
 const transformToString = value => {
@@ -117,7 +132,7 @@ const transformToString = value => {
 
 const display = value => {
     screen.textContent = value;
-    console.log(value)
+    console.log(number1)
 }
 
 document.querySelector('.backspace').addEventListener('click', () => backspace());
