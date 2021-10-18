@@ -23,6 +23,7 @@ h1, span {
 
 button {
     font-size: 30px;
+    cursor: pointer;
 
     @media screen and (max-width: $mobile) {
         font-size: 28px;
