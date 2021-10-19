@@ -1,31 +1,42 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $blue-1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue-1;
 
-    @media screen and (max-width: $mobile) and (min-height: 667px){ 
-        height: 100vh;
-    }
+  &#theme-2 {
+    background-color: $gray-1;
+  }
+
+  @media screen and (max-width: $mobile) and (min-height: 667px) {
+    height: 100vh;
+  }
 }
 
-h1, span, button {
-    margin: 0;
-    font-family: $spartan;
+h1,
+span,
+button {
+  margin: 0;
+  font-family: $spartan;
 }
 
-h1, span {
-    color: $white;
+h1,
+span {
+  color: $white;
+
+  body#theme-2 & {
+    color: $gray-6;
+  }
 }
 
 button {
-    font-size: 30px;
-    cursor: pointer;
+  font-size: 30px;
+  cursor: pointer;
 
-    @media screen and (max-width: $mobile) {
-        font-size: 28px;
-    }
+  @media screen and (max-width: $mobile) {
+    font-size: 28px;
+  }
 }

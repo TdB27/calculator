@@ -1,20 +1,24 @@
 .screen {
-    background-color: $blue-3;
-    margin-bottom: 23px;
-    padding: 36px;
-    box-sizing: border-box;
-    text-align: right;
-    border-radius: 10px;
+  background-color: $blue-3;
+  margin-bottom: 23px;
+  padding: 36px;
+  box-sizing: border-box;
+  text-align: right;
+  border-radius: 10px;
 
-    @media screen and (max-width: $mobile) {
-        padding: 24px;
-    }
+  body#theme-2 & {
+    background-color: $gray-3;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 24px;
+  }
 }
 
 .screen__result {
-    font-size: 46px;
+  font-size: 46px;
 
-    @media screen and (max-width: $mobile) {
-        font-size: 32px;
-    }
+  @media screen and (max-width: $mobile) {
+    font-size: 32px;
+  }
 }

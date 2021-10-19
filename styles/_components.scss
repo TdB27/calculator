@@ -1,69 +1,90 @@
 .components {
-    padding: 33px 30px;
-    background-color: $blue-2;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 25px;
+  padding: 33px 30px;
+  background-color: $blue-2;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
 
-    @media screen and (max-width: $mobile) {
-        padding: 28px 25px;
-        grid-gap: 15px;
-    }
+  body#theme-2 & {
+    background-color: $gray-2;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 28px 25px;
+    grid-gap: 15px;
+  }
 }
 .components__btn-default,
 .components__btn-double {
-    padding: 20px 38px 8px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 20px 38px 8px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    @media screen and (max-width: $mobile) {
-        padding: 17px 5px 12px;
-        border-radius: 5px;
-    }
+  @media screen and (max-width: $mobile) {
+    padding: 17px 5px 12px;
+    border-radius: 5px;
+  }
 }
 
 .components__btn-default {
-    color: $grayish-blue;
-    background-color: $gray;
-    box-shadow: 0 4px 0 $gray-dark;
+  color: $grayish-blue;
+  background-color: $gray;
+  box-shadow: 0 4px 0 $gray-dark;
+
+  body#theme-2 & {
+    color: $gray-6;
+    background-color: $gray-4;
+    box-shadow: 0 4px 0 $gray-5;
+  }
 }
 
 .--function-clear {
-    text-transform: uppercase;
-    font-size: 20px;
-    padding: 16px 25px 8px;
-    color: $white;
-    background-color: $blue-4;
-    box-shadow: 0 4px 0 $blue-5;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 16px 25px 8px;
+  color: $white;
+  background-color: $blue-4;
+  box-shadow: 0 4px 0 $blue-5;
 
-    @media screen and (max-width: $mobile) {
-        padding: 13px 5px 8px;
-        font-size: 16px;
-    }
+  body#theme-2 & {
+    color: $white;
+    background-color: $cyan-1;
+    box-shadow: 0 4px 0 $cyan-2;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 13px 5px 8px;
+    font-size: 16px;
+  }
 }
 
 .components__btn-double {
-    padding-bottom: 15px;
+  padding-bottom: 15px;
 
-    @media screen and (max-width: $mobile) {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+  @media screen and (max-width: $mobile) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .components__btn-double.--function-clear {
-    grid-column: 1 / 3;
+  grid-column: 1 / 3;
 }
 
 .components__btn-double.--function-equal {
-    grid-column: 3 / 5;
-    font-size: 20px;
-    color: $white;
-    background-color: $red;
-    box-shadow: 0 4px 0 $red-dark;
+  grid-column: 3 / 5;
+  font-size: 20px;
+  color: $white;
+  background-color: $red;
+  box-shadow: 0 4px 0 $red-dark;
+
+  body#theme-2 & {
+    background-color: $orange;
+    box-shadow: 0 4px 0 $orange-dark;
+  }
 }

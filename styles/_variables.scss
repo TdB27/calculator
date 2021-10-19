@@ -5,6 +5,9 @@ $mobile: 1200px;
 //font
 $spartan: 'Spartan', sans-serif;
 
+//text universal
+$white: hsl(0, 0, 100%);
+
 //colors -- theme-1
 //bg
 $blue-1: hsl(222, 26%, 31%);
@@ -19,6 +22,20 @@ $gray: hsl(30, 25%, 89%);
 $gray-dark: hsl(28, 16%, 65%);
 
 //texts
-$white: hsl(0, 0, 100%);
 $grayish-blue: hsl(221, 14%, 31%);
 
+//colors -- theme-2
+//bg
+$gray-1: hsl(0, 0%, 90%);
+$gray-2: hsl(0, 5%, 81%);
+$gray-3: hsl(0, 0%, 93%);
+//buttons
+$cyan-1: hsl(185, 42%, 37%);
+$cyan-2: hsl(185, 58%, 25%);
+$orange: hsl(25, 98%, 40%);
+$orange-dark: hsl(25, 99%, 27%);
+$gray-4: hsl(45, 7%, 89%);
+$gray-5: hsl(35, 11%, 61%);
+
+//texts
+$gray-6: hsl(60, 10%, 19%);
