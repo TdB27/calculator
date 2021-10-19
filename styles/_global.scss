@@ -11,6 +11,10 @@ body {
     background-color: $gray-1;
   }
 
+  &#theme-3 {
+    background-color: $violet-1;
+  }
+
   @media screen and (max-width: $mobile) and (min-height: 667px) {
     height: 100vh;
   }
@@ -29,6 +33,10 @@ span {
 
   body#theme-2 & {
     color: $gray-6;
+  }
+
+  body#theme-3 & {
+    color: $yellow;
   }
 }
 

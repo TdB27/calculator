@@ -10,6 +10,10 @@
     background-color: $gray-2;
   }
 
+  body#theme-3 & {
+    background-color: $violet-2;
+  }
+
   @media screen and (max-width: $mobile) {
     padding: 28px 25px;
     grid-gap: 15px;
@@ -41,6 +45,12 @@
     background-color: $gray-4;
     box-shadow: 0 4px 0 $gray-5;
   }
+
+  body#theme-3 & {
+    color: $yellow;
+    background-color: $violet-4;
+    box-shadow: 0 4px 0 $magenta-2;
+  }
 }
 
 .--function-clear {
@@ -55,6 +65,12 @@
     color: $white;
     background-color: $cyan-1;
     box-shadow: 0 4px 0 $cyan-2;
+  }
+
+  body#theme-3 & {
+    color: $white;
+    background-color: $violet-3;
+    box-shadow: 0 4px 0 $magenta-1;
   }
 
   @media screen and (max-width: $mobile) {
@@ -86,5 +102,11 @@
   body#theme-2 & {
     background-color: $orange;
     box-shadow: 0 4px 0 $orange-dark;
+  }
+
+  body#theme-3 & {
+    color: $blue-6;
+    background-color: $cyan-3;
+    box-shadow: 0 4px 0 $cyan-4;
   }
 }

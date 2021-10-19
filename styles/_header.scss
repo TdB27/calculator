@@ -69,6 +69,10 @@
   body#theme-2 & {
     background-color: $gray-2;
   }
+
+  body#theme-3 & {
+    background-color: $violet-2;
+  }
 }
 
 .header__area,
@@ -99,5 +103,13 @@
 
   &[data-theme-chosen='theme-3'] {
     transform: translate(45px);
+  }
+
+  body#theme-2 & {
+    background-color: $orange;
+  }
+
+  body#theme-3 & {
+    background-color: $cyan-3;
   }
 }
