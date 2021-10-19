@@ -2,7 +2,7 @@
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 <br />
-My solution:
+My solution: https://tdb27.github.io/calculator/
 
 ## Table of contents
 
@@ -37,16 +37,16 @@ Users must be able to:
 <p align="center">
   Screenshot to mobile (375px)
   <br />
-  <img src="" width="350" alt="Screenshot to mobile">
+  <img src="https://github.com/TdB27/calculator/blob/main/screenshots/screenshot_mobile.png" width="375" alt="Screenshot to mobile">
   <br />
-  Screenshot to desktop (1366px)
-  <img src="" width="100%" alt="Screenshot to desktop">
+  Screenshot to desktop (1440px)
+  <img src="https://github.com/TdB27/calculator/blob/main/screenshots/creenshot_desktop.png" width="100%" alt="Screenshot to desktop">
 </p>
 
 ### Links
 
-- Solution URL: [My solution]()
-- Live Site URL: [My code]()
+- Solution URL: [My solution](https://tdb27.github.io/calculator/)
+- Live Site URL: [My code](https://github.com/TdB27/calculator)
 
 ## My process - Meu processo
 
